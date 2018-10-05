@@ -2,7 +2,6 @@ import pygame as pg
 from random import randint,random
 import time
 import math
-from pymunk.vec2d import Vec2d
 
 
 anim_done = False ## set True to skip animation
@@ -34,12 +33,12 @@ while not anim_done:
         if (pg.key.get_pressed()[pg.K_UP] != 0 ):
             rate += 1
             print(f'delay: {rate}')
-        if (pg.key.get_pressed()[pg.K_DOWN] != 0 ):
+        if (pg.key.get_pressed()[pg.K_DOWN] != 0  and rate > 0):
             rate -= 1
             print(f'delay: {rate}')
         if (pg.key.get_pressed()[pg.K_RETURN ] != 0 ):
             running = True
-        if (pg.key.get_pressed()[pg.K_LEFT] != 0 ):
+        if (pg.key.get_pressed()[pg.K_LEFT] != 0 and separation > 0):
             separation -= 1
             print(f'bar separation: {separation}')
         if (pg.key.get_pressed()[pg.K_RIGHT] != 0 ):
